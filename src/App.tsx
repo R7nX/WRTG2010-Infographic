@@ -27,7 +27,7 @@ const infraDetails: Record<string, React.ReactNode> = {
     <>
       <h3>Energy Consumption</h3>
       <p>
-      Kate Crawford and Vladan Joler’s 2018 study, “Anatomy of an AI System,” reveals that AI isn’t a purely digital, “clean” technology but depends on extensive—and often exploitative—physical and human infrastructures. By following the lifecycle of an Amazon Echo, they expose how AI’s supply chains inflict severe environmental harm (like toxic lithium mining in South America) and perpetuate labor abuses (including child labor in Congo’s cobalt mines). Despite its slick, cloud‑based image, AI production involves energy‑intensive refinement, unsafe low‑wage manufacturing, and carbon‑heavy shipping—echoing colonial‑style resource extraction rather than a modern, sustainable innovation.
+        Kate Crawford and Vladan Joler’s 2018 study, “Anatomy of an AI System,” reveals that AI isn’t a purely digital, “clean” technology but depends on extensive—and often exploitative—physical and human infrastructures. By following the lifecycle of an Amazon Echo, they expose how AI’s supply chains inflict severe environmental harm (like toxic lithium mining in South America) and perpetuate labor abuses (including child labor in Congo’s cobalt mines). Despite its slick, cloud‑based image, AI production involves energy‑intensive refinement, unsafe low‑wage manufacturing, and carbon‑heavy shipping—echoing colonial‑style resource extraction rather than a modern, sustainable innovation.
       </p>
     </>
   ),
@@ -294,6 +294,17 @@ const App: React.FC = () => {
           <li>O’Neil, Cathy. <em>Weapons of Math Destruction.</em> Crown Publishing Group, 2016.</li>
           <li>Zuboff, Shoshana. <em>The Age of Surveillance Capitalism.</em> PublicAffairs, 2019.</li>
         </ul>
+      </TextSection>
+
+      <TextSection title="Closing Statements">
+        <p>
+          Thank you for exploring the hidden costs of AI with me. I hope this journey
+          has shed light on the environmental, ethical, and social trade‑offs we face,
+          and inspires you to demand more transparent, responsible AI going forward.
+        </p>
+        <p>
+          So, what’s your verdict?** Could you tell which half of this site was penned by artificial intelligence and which by a human hand? I’ve left it deliberately ambiguous because that very uncertainty sparks the questions we need to ask—about AI’s ethical and environmental costs, and about its dizzying efficiency. If even a keen eye can’t distinguish an LLM’s work from our own, then we’ve arrived at a crossroads: one where technology mirrors human creativity so closely that it challenges our notions of authorship, responsibility, and trust. What will you make of that?
+        </p>
       </TextSection>
 
       <FooterCTA

@@ -62,21 +62,9 @@ body {
 }
 
 .hero h1 {
-  /* responsive from 2.5rem up to 4rem */
-  font-size: clamp(2.5rem, 8vw, 4rem);
-  line-height: 1.1;
+  font-size: 3rem;
   margin-bottom: 1rem;
   letter-spacing: 1px;
-
-  /* gradient text */
-  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-
-  /* subtle drop shadow for pop */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
 }
 
 .hero p {
