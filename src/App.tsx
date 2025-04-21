@@ -10,7 +10,7 @@ import FooterCTA from './components/FooterCTA';
 import TextSection from './components/TextSection';
 import Modal from './components/Modal';
 
-import { carbonData, exampleSankey } from './data/infographicData';
+import { carbonData } from './data/infographicData';
 import { Code, Cloud, Users } from 'lucide-react';
 
 import miningImg from './assets/cobaltMines.jpeg';
@@ -195,9 +195,9 @@ const App: React.FC = () => {
         )}
       </ChartSection>
 
-      <ChartSection title="Material Flow (Sankey)">
-        <SankeyDiagram data={exampleSankey} />
-      </ChartSection>
+      {/* <ChartSection title="Material Flow (Sankey)">
+        <SankeyDiagram/>
+      </ChartSection> */}
 
       <ChartSection title="Carbon Footprint by Model">
         <CarbonChart data={carbonData} />
@@ -298,7 +298,7 @@ const App: React.FC = () => {
 
       <FooterCTA
         ctaText="Learn how to take action"
-        onClick={() => window.open('https://your-policy-page.example', '_blank')}
+        onClick={() => window.open('https://www.forbes.com/councils/forbestechcouncil/2025/03/27/breaking-the-planet-to-build-the-future-can-ais-environmental-price-be-mollified/', '_blank')}
       />
     </div>
   );

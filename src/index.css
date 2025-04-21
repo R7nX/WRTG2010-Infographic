@@ -1,24 +1,35 @@
 :root {
   /* primary brand colors */
-  --color-primary:   #1abc9c; /* turquoise */
-  --color-secondary: #3498db; /* blue */
-  --color-accent:    #e74c3c; /* coral */
-  --color-bg-light:  #f0fcfb; /* very pale turquoise */
-  --color-bg-muted:  #fbfcfd; /* off-white */
-  --color-text:      #2c3e50; /* dark slate */
+  --color-primary: #1abc9c;
+  /* turquoise */
+  --color-secondary: #3498db;
+  /* blue */
+  --color-accent: #e74c3c;
+  /* coral */
+  --color-bg-light: #f0fcfb;
+  /* very pale turquoise */
+  --color-bg-muted: #fbfcfd;
+  /* off-white */
+  --color-text: #2c3e50;
+  /* dark slate */
   --transition-fast: 0.25s ease-out;
   --gradient-start: #1abc9c;
-  --gradient-end:   #3498db;
+  --gradient-end: #3498db;
 }
 
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   background: var(--color-bg-muted);
   color: var(--color-text);
   font-family: "Inter", sans-serif;
@@ -36,80 +47,104 @@ body {
   animation: fadeIn 0.6s var(--transition-fast) forwards;
   padding: 4rem 0;
 }
+
 .section:nth-of-type(even) {
   background: var(--color-bg-light);
 }
 
 .hero {
   background: linear-gradient(135deg,
-    var(--color-primary) 0%,
-    var(--color-secondary) 100%);
+      var(--color-primary) 0%,
+      var(--color-secondary) 100%);
   color: white;
   text-align: center;
   padding: 6rem 1rem;
 }
+
 .hero h1 {
-  font-size: 3rem;
+  /* responsive from 2.5rem up to 4rem */
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  line-height: 1.1;
   margin-bottom: 1rem;
   letter-spacing: 1px;
+
+  /* gradient text */
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  /* subtle drop shadow for pop */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
 }
+
 .hero p {
   font-size: 1.2rem;
   max-width: 700px;
   margin: 0 auto;
 }
 
-/* 6) Typography tweaks */
 h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   color: var(--color-text);
 }
+
 p {
   margin-bottom: 1rem;
 }
-ul, ol {
+
+ul,
+ol {
   margin-bottom: 1rem;
   padding-left: 1.25rem;
 }
 
-/* 7) Card improvements */
 .card {
   background: white;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
+
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* 8) Button accent */
 .btn-accent {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: var(--color-accent);
+  display: block;         /* span full width of its container */
+  margin: 1rem auto;      /* center horizontally, add a bit of vertical space */
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  min-width: 200px;
+  text-align: center;
+  background: var(--color-primary);
   color: white;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
   border-radius: 9999px;
   cursor: pointer;
-  transition: background var(--transition-fast), transform var(--transition-fast);
-  text-decoration: none;
-}
-.btn-accent:hover {
-  background: var(--color-primary);
-  transform: translateY(-2px);
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
 }
 
-/* 9) Fade‑in keyframes */
+.btn-accent:hover {
+  background: var(--color-secondary);
+  transform: translateY(-2px) scale(1.05);
+}
+
 @keyframes fadeIn {
   from {
-    opacity: 0; transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
+
   to {
-    opacity: 1; transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -135,7 +170,8 @@ ul, ol {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1rem;
-  align-items: stretch;       /* ensure children all stretch to same height */
+  align-items: stretch;
+  /* ensure children all stretch to same height */
 }
 
 @media (min-width: 600px) {
@@ -150,8 +186,8 @@ ul, ol {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;         
-  min-height: 200px;          
+  text-align: center;
+  min-height: 200px;
 }
 
 /* Center the section title & give it a little pop */
@@ -163,19 +199,22 @@ ul, ol {
 }
 
 .card-gradient {
-  background: linear-gradient(
-    135deg,
-    var(--gradient-end),
-    var(--gradient-start)
-  );
+  background: linear-gradient(135deg,
+      var(--gradient-end),
+      var(--gradient-start));
   color: white;
 }
 
 .modal-overlay {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.5);
-  display: flex; align-items: center; justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 9999;
 }
 
@@ -190,12 +229,15 @@ ul, ol {
   margin: 1rem;
   /* ensure content itself is above the overlay if needed */
   z-index: 10000;
-  position: relative;    
+  position: relative;
 }
 
 .modal-close {
   position: absolute;
-  top: 1rem; right: 1rem;
-  background: none; border: none;
-  font-size: 1.5rem; cursor: pointer;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
